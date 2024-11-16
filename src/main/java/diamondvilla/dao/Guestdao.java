@@ -55,4 +55,10 @@ public class Guestdao {
 			return l;
 		}
 	}
+	
+	public void update(GuestDB g1) {
+		entityTransaction.begin();
+		entityManager.merge(g1);
+		entityTransaction.commit();
+	}
 }

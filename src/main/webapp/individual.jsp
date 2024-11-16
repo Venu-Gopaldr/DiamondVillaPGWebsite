@@ -26,7 +26,10 @@ width: 100%;
 			<th>Location</th>
 			<th>Floor Number</th>
 			<th>Flat Number</th>
+			<th>Sharing</th>
 			<th>Rent</th>
+			<th>Remove</th>
+			<th>Update</th>
 		</tr>
 		
 		<tr>
@@ -37,7 +40,10 @@ width: 100%;
 			<td><%=g.getLoc()%></td>
 			<td><%=g.getFloor()%></td>
 			<td><%=g.getFlat()%></td>
+			<td><%=g.getShare()%></td>
 			<td><%=g.getRent()%></td>
+			<td><a href="did?email=<%=g.getGemail()%>">delete</a></td>
+			<td><a href="update.jsp?name=<%=g.getGname()%>&&aadhar=<%=g.getGaadhar()%>&&email=<%=g.getGemail()%>&&mobile=<%=g.getMobile()%>&&location=<%=g.getLoc()%>&&floor=<%=g.getFloor()%>&&flat=<%=g.getFlat()%>&&share=<%=g.getShare()%>&&rent=<%=g.getRent()%>">edit</a></td>
 		</tr>
 		
 	</table>

@@ -22,6 +22,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	String loc = req.getParameter("location");
 	int floor = Integer.parseInt(req.getParameter("floor"));
 	String flat = req.getParameter("flat");
+	int share = Integer.parseInt(req.getParameter("share"));
 	Double rent = Double.parseDouble(req.getParameter("rent"));
 	
 	GuestDB guestDB = new GuestDB();
@@ -32,6 +33,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	guestDB.setLoc(loc);
 	guestDB.setFloor(floor);
 	guestDB.setFlat(flat);
+	guestDB.setShare(share);
 	guestDB.setRent(rent);
 	
 	Guestdao guestdao = new Guestdao();

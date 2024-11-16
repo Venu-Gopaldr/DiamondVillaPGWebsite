@@ -17,6 +17,13 @@ private long Mobile;
 private String loc;
 private int floor;
 private String flat;
+private int share;
+public int getShare() {
+	return share;
+}
+public void setShare(int share) {
+	this.share = share;
+}
 private double rent;
 public String getGname() {
 	return gname;
@@ -69,6 +76,7 @@ public void setRent(double rent) {
 @Override
 public String toString() {
 	return "GuestDB [gname=" + gname + ", gemail=" + gemail + ", gaadhar=" + gaadhar + ", Mobile=" + Mobile + ", loc="
-			+ loc + ", floor=" + floor + ", flat=" + flat + ", rent=" + rent + "]";
+			+ loc + ", floor=" + floor + ", flat=" + flat + ", share=" + share + ", rent=" + rent + "]";
 }
+
 }

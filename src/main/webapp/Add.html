@@ -3,20 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <title>DiamondVilla</title>
-<style type="text/css">
-button{
-background-color: black;
-color: white;
-}
-button:hover{
-opacity: 0.8;
-background-color: white;
-color: black;
-}
-body{
-background-color: coral;
-}
-</style>
+<style>
+        body {
+            background-color: coral;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            text-align: left;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 10px 5px;
+        }
+        button {
+            background-color: black;
+            color: white;
+            height: 45px;
+            width: 100%;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            opacity: 0.8;
+            background-color: white;
+            color: black;
+        }
+    </style>
 </head>
 <body style="text-align: center;">
 	<center>
@@ -63,9 +86,18 @@ background-color: coral;
 						name="flat"> <br></td>
 				</tr>
 				<tr>
+					<td><label for="share">Select Guests Sharing : </label></td>
+					<td><select name="share" id="share" onchange="updateRent()">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+					</select> <br></td>
+				</tr>
+				<tr>
 					<td><label for="rent">Enter Guest Rent : </label></td>
 					<td><input type="number" placeholder="enter rent..." id="rent"
-						name="rent"> <br></td>
+						name="rent" > <br></td>
 				</tr>
 				<tr>
 					<td colspan="2">
@@ -75,5 +107,23 @@ background-color: coral;
 			</table>
 		</form>
 	</center>
+	
+	<script>
+        function updateRent() {
+            const share = document.getElementById("share").value;
+            const rentInput = document.getElementById("rent");
+            
+            // Define rent amounts for each sharing option
+            const rentValues = {
+                "1": 8000,
+                "2": 7200,
+                "3": 6800,
+                "4": 6300
+            };
+
+            // Update rent based on the selected sharing option
+            rentInput.value = rentValues[share];
+        }
+    </script>
 </body>
 </html>
